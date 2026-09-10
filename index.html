@@ -22,41 +22,27 @@
 
     <header class="site-header">
         <div class="header-content">
-
             <h1>Galería de Proyectos Técnicos</h1>
-
-            <p>
-                Proyectos de innovación y desarrollo tecnológico
-            </p>
-
+            <p>Proyectos de innovación y desarrollo tecnológico</p>
         </div>
     </header>
 
-    <nav 
-    id="navegacion-principal"
-    class="main-nav"
-    role="navigation"
-    aria-label="Navegación principal"
-    >
-
+    <!-- FIX #1: eliminado role="navigation" (rol implícito en <nav>) -->
+    <!-- FIX #2: eliminado enlace "Nosotros" porque #nosotros no existía -->
+    <nav class="main-nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
-
     </nav>
 
     <main id="contenido">
 
         <section id="inicio" class="intro-section">
-
             <h2>Proyectos destacados</h2>
-
             <p>
                 Conoce algunos proyectos técnicos relacionados con
                 tecnología, innovación y desarrollo de sistemas.
             </p>
-
         </section>
 
         <section 
@@ -70,142 +56,84 @@
             <div class="projects-grid">
 
                 <article class="project-card" data-category="web">
-
                     <div class="project-image">
                         <img 
                             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
                             alt="Computadora mostrando código de programación"
                         >
                     </div>
-
                     <div class="project-content">
-
-                        <span class="project-category">
-                            Desarrollo Web
-                        </span>
-
+                        <span class="project-category">Desarrollo Web</span>
                         <h3>Sistema de Gestión Web</h3>
-
                         <p>
                             Plataforma web diseñada para mejorar
                             la gestión y organización de información.
                         </p>
-
-                        <a 
-                            href="#"
-                            class="project-link"
-                            aria-label="Ver proyecto Sistema de Gestión Web"
-                        >
+                        <!-- FIX #3: <a href="#"> reemplazado por <button> -->
+                        <button type="button" class="project-link">
                             Ver proyecto
-                        </a>
-
+                        </button>
                     </div>
-
                 </article>
 
-
                 <article class="project-card" data-category="mobile">
-
                     <div class="project-image">
                         <img 
                             src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"
                             alt="Teléfono inteligente utilizado para una aplicación móvil"
                         >
                     </div>
-
                     <div class="project-content">
-
-                        <span class="project-category">
-                            Aplicaciones móviles
-                        </span>
-
+                        <span class="project-category">Aplicaciones móviles</span>
                         <h3>Aplicación Móvil</h3>
-
                         <p>
                             Aplicación orientada a facilitar el acceso
                             a servicios tecnológicos desde dispositivos móviles.
                         </p>
-
-                        <a 
-                            href="#"
-                            class="project-link"
-                            aria-label="Ver proyecto Aplicación Móvil"
-                        >
+                        <button type="button" class="project-link">
                             Ver proyecto
-                        </a>
-
+                        </button>
                     </div>
-
                 </article>
 
-
                 <article class="project-card" data-category="ia">
-
                     <div class="project-image">
                         <img 
                             src="https://images.unsplash.com/photo-1677442136019-21780ecad995"
                             alt="Representación de inteligencia artificial"
                         >
                     </div>
-
                     <div class="project-content">
-
-                        <span class="project-category">
-                            Inteligencia Artificial
-                        </span>
-
+                        <span class="project-category">Inteligencia Artificial</span>
                         <h3>Sistema Inteligente</h3>
-
                         <p>
                             Propuesta basada en inteligencia artificial
                             para apoyar la toma de decisiones.
                         </p>
-
-                        <a 
-                            href="#"
-                            class="project-link"
-                            aria-label="Ver proyecto Sistema Inteligente"
-                        >
+                        <button type="button" class="project-link">
                             Ver proyecto
-                        </a>
-
+                        </button>
                     </div>
-
                 </article>
 
-
                 <article class="project-card" data-category="iot">
-
                     <div class="project-image">
                         <img 
                             src="https://images.unsplash.com/photo-1518770660439-4636190af475"
                             alt="Componentes electrónicos de un proyecto tecnológico"
                         >
                     </div>
-
                     <div class="project-content">
-
-                        <span class="project-category">
-                            Internet de las Cosas
-                        </span>
-
+                        <span class="project-category">Internet de las Cosas</span>
                         <h3>Proyecto IoT</h3>
-
                         <p>
                             Sistema conectado que utiliza sensores
                             para recopilar y procesar información.
                         </p>
-
-                        <a 
-                            href="#"
-                            class="project-link"
-                            aria-label="Ver proyecto Proyecto IoT"
-                        >
+                        <button type="button" class="project-link">
                             Ver proyecto
-                        </a>
-
+                        </button>
                     </div>
-
                 </article>
 
             </div>
@@ -214,13 +142,8 @@
 
     </main>
 
-
     <footer id="contacto" class="site-footer">
-
-        <p>
-            © 2026 Galería de Proyectos Técnicos
-        </p>
-
+        <p>© 2026 Galería de Proyectos Técnicos</p>
     </footer>
 
 </body>

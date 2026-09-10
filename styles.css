@@ -1,6 +1,6 @@
 /* =====================================================
    GALERÍA DE PROYECTOS TÉCNICOS
-   CSS BASE
+   CSS BASE — VERSIÓN CORREGIDA
    ===================================================== */
 
 /* =====================================================
@@ -15,7 +15,14 @@
     --color-background: #f5f7fa;
     --color-surface: #ffffff;
     --color-text: #1f2937;
-    --color-text-light: #64748b;
+
+    /* FIX #4: --color-text-light era #64748b → contraste 4.45:1 sobre
+       --color-background (#f5f7fa), por debajo de WCAG AA (4.5:1).
+       Se cambió a #4a5568 → contraste 7.04:1.
+       IA: consulté "cómo interpretar el reporte de contraste de WAVE"
+       → Corrección manual: oscurecí el gris en la variable raíz. */
+    --color-text-light: #4a5568;
+
     --color-border: #dbe2ea;
 
     --font-main: Arial, Helvetica, sans-serif;
@@ -204,7 +211,6 @@ main {
 
 .intro-section {
     padding-block: calc(var(--space-xxl) + 1vw);
-
     text-align: center;
 }
 
@@ -346,7 +352,7 @@ main {
 
 
 /* =====================================================
-   14. ENLACE DE PROYECTO
+   14. BOTÓN DE PROYECTO
    ===================================================== */
 
 .project-link {
@@ -359,7 +365,13 @@ main {
     background-color: var(--color-primary);
     color: #ffffff;
 
-    text-decoration: none;
+    /* FIX #6: al cambiar <a> por <button> hay que resetear los estilos
+       por defecto del navegador para conservar la apariencia original. */
+    border: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+
     font-weight: bold;
 
     border-radius: var(--radius-sm);
@@ -447,6 +459,7 @@ main {
     }
 }
 
+
 /* =====================================================
    18. CONTAINER QUERIES
    ===================================================== */
@@ -456,8 +469,6 @@ main {
     container-name: project-gallery;
 }
 
-
-/* Tarjetas adaptables según el espacio disponible */
 
 @container project-gallery (min-width: 45rem) {
 
@@ -477,6 +488,34 @@ main {
         transform: translateY(0.75rem);
     }
 }
+
+/* FIX #7: fallback para navegadores sin soporte de @container.
+   La guía pide anotar compatibilidad verificada en Can I Use.
+   @container tiene soporte desde Chrome 105 / Safari 16 / Firefox 110.
+   IA: consulté "container-type: inline-size compatibility" en Can I Use
+   → Corrección manual: escribí este @supports con la misma lógica en @media. */
+@supports not (container-type: inline-size) {
+
+    @media (min-width: 45rem) {
+
+        .project-card:nth-child(1) {
+            grid-row: span 2;
+        }
+
+        .project-card:nth-child(2) {
+            transform: translateY(1.5rem);
+        }
+
+        .project-card:nth-child(3) {
+            transform: translateY(-0.75rem);
+        }
+
+        .project-card:nth-child(4) {
+            transform: translateY(0.75rem);
+        }
+    }
+}
+
 
 /* =====================================================
    19. MODO OSCURO
@@ -518,13 +557,27 @@ main {
         color: var(--color-primary);
     }
 
+    /* FIX #5: en modo oscuro --color-primary es un azul claro (#6ea8d8).
+       El texto blanco sobre ese fondo daba 2.54:1 (falla WCAG AA).
+       Se fuerza texto oscuro cuando --color-primary se usa como fondo.
+       IA: consulté "cómo interpretar el reporte de contraste de WAVE"
+       → Corrección manual: sobrescribí el color del texto en hover. */
+    .main-nav a:hover,
+    .project-link {
+        background-color: var(--color-primary);
+        color: #121820;
+    }
+
+    .project-link:hover,
     .main-nav a:hover {
-        color: #ffffff;
+        background-color: var(--color-secondary);
+        color: #121820;
     }
 }
 
+
 /* =====================================================
-   21. ACCESIBILIDAD - ENFOQUE VISIBLE
+   20. ACCESIBILIDAD — ENFOQUE VISIBLE
    ===================================================== */
 
 :focus-visible {
@@ -532,8 +585,9 @@ main {
     outline-offset: 0.2rem;
 }
 
+
 /* =====================================================
-   22. REDUCCIÓN DE MOVIMIENTO
+   21. REDUCCIÓN DE MOVIMIENTO
    ===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
