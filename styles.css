@@ -8,569 +8,640 @@
    ===================================================== */
 
 :root {
-    --color-primary: #1f4e79;
-    --color-primary-dark: #163a5c;
-    --color-secondary: #4f81bd;
+  --color-primary: #1f4e79;
+  --color-primary-dark: #163a5c;
+  --color-secondary: #4f81bd;
 
-    --color-background: #f5f7fa;
-    --color-surface: #ffffff;
-    --color-text: #1f2937;
+  --color-background: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-text: #1f2937;
 
-    /* FIX #4: --color-text-light era #64748b → contraste 4.45:1 sobre
+  /* FIX #4: --color-text-light era #64748b → contraste 4.45:1 sobre
        --color-background (#f5f7fa), por debajo de WCAG AA (4.5:1).
        Se cambió a #4a5568 → contraste 7.04:1.
        IA: consulté "cómo interpretar el reporte de contraste de WAVE"
        → Corrección manual: oscurecí el gris en la variable raíz. */
-    --color-text-light: #4a5568;
+  --color-text-light: #4a5568;
 
-    --color-border: #dbe2ea;
+  --color-border: #dbe2ea;
 
-    --font-main: Arial, Helvetica, sans-serif;
+  --font-main: Arial, Helvetica, sans-serif;
 
-    --space-xs: 0.5rem;
-    --space-sm: 0.75rem;
-    --space-md: 1rem;
-    --space-lg: 1.5rem;
-    --space-xl: 2rem;
-    --space-xxl: 3rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
 
-    --radius-sm: 0.5rem;
-    --radius-md: 0.75rem;
-    --radius-lg: 1rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
 
-    --shadow-card: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
 
-    --content-width: 75rem;
+  --content-width: 75rem;
 }
-
 
 /* =====================================================
    2. CONFIGURACIÓN GENERAL
    ===================================================== */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: var(--font-main);
-    background-color: var(--color-background);
-    color: var(--color-text);
-    line-height: 1.6;
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
 }
-
 
 /* =====================================================
    3. TIPOGRAFÍA FLUIDA
    ===================================================== */
 
 h1 {
-    margin: 0;
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.1;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
 }
 
 h2 {
-    margin: 0 0 var(--space-md);
-    font-size: clamp(1.6rem, 3vw, 2.5rem);
-    line-height: 1.2;
+  margin: 0 0 var(--space-md);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1.2;
 }
 
 h3 {
-    margin: 0;
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
-    line-height: 1.3;
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.3;
 }
 
 p {
-    margin-block: 0 var(--space-md);
+  margin-block: 0 var(--space-md);
 }
-
 
 /* =====================================================
    4. SKIP LINK
    ===================================================== */
 
 .skip-link {
-    position: absolute;
-    inset-inline-start: 1rem;
-    inset-block-start: -5rem;
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -5rem;
 
-    z-index: 1000;
+  z-index: 1000;
 
-    padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
 
-    background-color: var(--color-primary);
-    color: #ffffff;
+  background-color: var(--color-primary);
+  color: #ffffff;
 
-    text-decoration: none;
-    font-weight: bold;
+  text-decoration: none;
+  font-weight: bold;
 
-    border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm);
 }
 
 .skip-link:focus {
-    inset-block-start: 1rem;
+  inset-block-start: 1rem;
 }
-
 
 /* =====================================================
    5. HEADER
    ===================================================== */
 
 .site-header {
-    padding-block: calc(var(--space-xl) + 1vw);
-    padding-inline: var(--space-lg);
+  padding-block: calc(var(--space-xl) + 1vw);
+  padding-inline: var(--space-lg);
 
-    background-color: var(--color-primary);
-    color: #ffffff;
+  background-color: var(--color-primary);
+  color: #ffffff;
 
-    text-align: center;
+  text-align: center;
 }
 
 .header-content {
-    width: min(100%, var(--content-width));
-    margin-inline: auto;
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
 }
 
 .header-content p {
-    margin-block-start: var(--space-md);
-    margin-block-end: 0;
+  margin-block-start: var(--space-md);
+  margin-block-end: 0;
 
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    opacity: 0.9;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  opacity: 0.9;
 }
-
 
 /* =====================================================
    6. NAVEGACIÓN
    ===================================================== */
 
 .main-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-sm);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
 
-    padding: var(--space-md);
+  padding: var(--space-md);
 
-    background-color: var(--color-surface);
-    border-block-end: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  border-block-end: 1px solid var(--color-border);
 }
 
 .main-nav a {
-    padding-block: var(--space-sm);
-    padding-inline: var(--space-md);
+  padding-block: var(--space-sm);
+  padding-inline: var(--space-md);
 
-    color: var(--color-primary);
+  color: var(--color-primary);
 
-    text-decoration: none;
-    font-weight: bold;
+  text-decoration: none;
+  font-weight: bold;
 
-    border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm);
 
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .main-nav a:hover {
-    background-color: var(--color-primary);
-    color: #ffffff;
+  background-color: var(--color-primary);
+  color: #ffffff;
 }
 
 .main-nav a:focus-visible {
-    outline: 0.2rem solid var(--color-secondary);
-    outline-offset: 0.2rem;
+  outline: 0.2rem solid var(--color-secondary);
+  outline-offset: 0.2rem;
 }
-
 
 /* =====================================================
    7. CONTENIDO PRINCIPAL
    ===================================================== */
 
 main {
-    width: min(
-        calc(100% - 2rem),
-        var(--content-width)
-    );
+  width: min(calc(100% - 2rem), var(--content-width));
 
-    margin-inline: auto;
+  margin-inline: auto;
 }
-
 
 /* =====================================================
    8. INTRODUCCIÓN
    ===================================================== */
 
 .intro-section {
-    padding-block: calc(var(--space-xxl) + 1vw);
-    text-align: center;
+  padding-block: calc(var(--space-xxl) + 1vw);
+  text-align: center;
 }
 
 .intro-section p {
-    max-width: 45rem;
-    margin-inline: auto;
+  max-width: 45rem;
+  margin-inline: auto;
 
-    color: var(--color-text-light);
+  color: var(--color-text-light);
 
-    font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
 }
-
 
 /* =====================================================
    9. SECCIÓN DE PROYECTOS
    ===================================================== */
 
 .projects-section {
-    padding-block-end: var(--space-xxl);
+  padding-block-end: var(--space-xxl);
 }
 
 .projects-section > h2 {
-    margin-block-end: var(--space-xl);
+  margin-block-end: var(--space-xl);
 }
-
 
 /* =====================================================
    10. GRID PRINCIPAL
    ===================================================== */
 
 .projects-grid {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: var(--space-lg);
+  gap: var(--space-lg);
 
-    /* 'stretch' hace que todas las tarjetas de una misma fila
+  /* 'stretch' hace que todas las tarjetas de una misma fila
        tengan exactamente la misma altura. */
-    align-items: stretch;
+  align-items: stretch;
 }
-
 
 /* =====================================================
    11. TARJETAS
    ===================================================== */
 
 .project-card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    background-color: var(--color-surface);
+  background-color: var(--color-surface);
 
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
 
-    box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card);
 
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .project-card:hover {
-    box-shadow:
-        0 1rem 2rem rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
 }
-
 
 /* =====================================================
    12. IMÁGENES
    ===================================================== */
 
 .project-image {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .project-image img {
-    display: block;
+  display: block;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .project-image:hover img {
-    opacity: 0.9;
+  opacity: 0.9;
 }
-
 
 /* =====================================================
    13. CONTENIDO DE LAS TARJETAS
    ===================================================== */
 
 .project-content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    flex: 1;
+  flex: 1;
 
-    padding: var(--space-lg);
+  padding: var(--space-lg);
 }
 
 .project-category {
-    align-self: flex-start;
+  align-self: flex-start;
 
-    margin-block-end: var(--space-sm);
+  margin-block-end: var(--space-sm);
 
-    padding-block: 0.25rem;
-    padding-inline: 0.65rem;
+  padding-block: 0.25rem;
+  padding-inline: 0.65rem;
 
-    background-color: #e8f1fa;
-    color: var(--color-primary);
+  background-color: #e8f1fa;
+  color: var(--color-primary);
 
-    border-radius: 999px;
+  border-radius: 999px;
 
-    font-size: 0.8rem;
-    font-weight: bold;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .project-content h3 {
-    margin-block-end: var(--space-sm);
+  margin-block-end: var(--space-sm);
 }
 
 .project-content p {
-    color: var(--color-text-light);
+  color: var(--color-text-light);
 }
-
 
 /* =====================================================
    14. BOTÓN DE PROYECTO
    ===================================================== */
 
 .project-link {
-    align-self: flex-start;
+  align-self: flex-start;
 
-    margin-block-start: auto;
-    padding-block: var(--space-sm);
-    padding-inline: var(--space-md);
+  margin-block-start: auto;
+  padding-block: var(--space-sm);
+  padding-inline: var(--space-md);
 
-    background-color: var(--color-primary);
-    color: #ffffff;
+  background-color: var(--color-primary);
+  color: #ffffff;
 
-    /* FIX #6: al cambiar <a> por <button> hay que resetear los estilos
+  /* FIX #6: al cambiar <a> por <button> hay que resetear los estilos
        por defecto del navegador para conservar la apariencia original. */
-    border: 0;
-    font-family: inherit;
-    font-size: 1rem;
-    cursor: pointer;
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
 
-    font-weight: bold;
+  font-weight: bold;
 
-    border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm);
 
-    transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .project-link:hover {
-    background-color: var(--color-primary-dark);
+  background-color: var(--color-primary-dark);
 }
 
 .project-link:focus-visible {
-    outline: 0.2rem solid var(--color-secondary);
-    outline-offset: 0.2rem;
+  outline: 0.2rem solid var(--color-secondary);
+  outline-offset: 0.2rem;
 }
-
 
 /* =====================================================
    15. FOOTER
    ===================================================== */
 
 .site-footer {
-    padding-block: var(--space-xl);
-    padding-inline: var(--space-lg);
+  padding-block: var(--space-xl);
+  padding-inline: var(--space-lg);
 
-    background-color: var(--color-primary-dark);
-    color: #ffffff;
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
 
-    text-align: center;
+  text-align: center;
 }
 
 .site-footer p {
-    margin: 0;
+  margin: 0;
 }
-
 
 /* =====================================================
    16. RESPONSIVE - TABLET
    ===================================================== */
 
 @media (max-width: 48rem) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+  .main-nav {
+    gap: 0.25rem;
+  }
 
-    .main-nav {
-        gap: 0.25rem;
-    }
-
-    .main-nav a {
-        padding-inline: 0.75rem;
-    }
+  .main-nav a {
+    padding-inline: 0.75rem;
+  }
 }
-
 
 /* =====================================================
    17. RESPONSIVE - MÓVIL
    ===================================================== */
 
 @media (max-width: 30rem) {
+  main {
+    width: min(calc(100% - 1rem), var(--content-width));
+  }
 
-    main {
-        width: min(
-            calc(100% - 1rem),
-            var(--content-width)
-        );
-    }
+  .site-header {
+    padding-inline: var(--space-md);
+  }
 
-    .site-header {
-        padding-inline: var(--space-md);
-    }
+  .intro-section {
+    padding-block: var(--space-xl);
+  }
 
-    .intro-section {
-        padding-block: var(--space-xl);
-    }
+  .main-nav {
+    flex-direction: column;
+  }
 
-    .main-nav {
-        flex-direction: column;
-    }
-
-    .main-nav a {
-        width: 100%;
-        text-align: center;
-    }
+  .main-nav a {
+    width: 100%;
+    text-align: center;
+  }
 }
-
 
 /* =====================================================
    18. CONTAINER QUERIES
    ===================================================== */
 
 .projects-grid {
-    container-type: inline-size;
-    container-name: project-gallery;
+  container-type: inline-size;
+  container-name: project-gallery;
 }
 
 /* Si el contenedor se hace muy ancho, permitimos 3 columnas.
    Es la única regla de container query que conservamos porque
    mejora la vista en pantallas grandes sin romper el orden. */
 @container project-gallery (min-width: 70rem) {
-
-    .projects-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+  .projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* Fallback para navegadores sin @container
    IA: consulté "container-type: inline-size compatibility" en Can I Use
    → Corrección manual: escribí el @supports con @media equivalente. */
 @supports not (container-type: inline-size) {
-
-    @media (min-width: 70rem) {
-
-        .projects-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
+  @media (min-width: 70rem) {
+    .projects-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+  }
 }
-
 
 /* =====================================================
-   19. MODO OSCURO
+   19. MODO CLARO / OSCURO
    ===================================================== */
 
+/* Variables del modo OSCURO cuando lo dicta el sistema */
 @media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-primary: #6ea8d8;
+    --color-primary-dark: #274c6e;
+    --color-secondary: #8bbce8;
 
-    :root {
-        --color-primary: #6ea8d8;
-        --color-primary-dark: #274c6e;
-        --color-secondary: #8bbce8;
+    --color-background: #121820;
+    --color-surface: #1c2630;
+    --color-text: #e8edf2;
+    --color-text-light: #b4c0cc;
+    --color-border: #344454;
 
-        --color-background: #121820;
-        --color-surface: #1c2630;
-        --color-text: #e8edf2;
-        --color-text-light: #b4c0cc;
-        --color-border: #344454;
-
-        --shadow-card:
-            0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
-    }
-
-    body,
-    .main-nav,
-    .project-card,
-    .site-footer {
-        transition:
-            background-color 0.3s ease,
-            color 0.3s ease,
-            border-color 0.3s ease;
-    }
-
-    .project-category {
-        background-color: #263f55;
-        color: #b9dcf7;
-    }
-
-    .main-nav a {
-        color: var(--color-primary);
-    }
-
-    /* FIX #5: en modo oscuro --color-primary es un azul claro (#6ea8d8).
-       El texto blanco sobre ese fondo daba 2.54:1 (falla WCAG AA).
-       Se fuerza texto oscuro cuando --color-primary se usa como fondo.
-       IA: consulté "cómo interpretar el reporte de contraste de WAVE"
-       → Corrección manual: sobrescribí el color del texto en hover. */
-    .main-nav a:hover,
-    .project-link {
-        background-color: var(--color-primary);
-        color: #121820;
-    }
-
-    .project-link:hover,
-    .main-nav a:hover {
-        background-color: var(--color-secondary);
-        color: #121820;
-    }
+    --shadow-card: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  }
 }
 
+/* Forzar oscuro manualmente desde el botón */
+:root[data-theme="dark"] {
+  --color-primary: #6ea8d8;
+  --color-primary-dark: #274c6e;
+  --color-secondary: #8bbce8;
+
+  --color-background: #121820;
+  --color-surface: #1c2630;
+  --color-text: #e8edf2;
+  --color-text-light: #b4c0cc;
+  --color-border: #344454;
+
+  --shadow-card: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+/* Forzar claro manualmente (aunque el sistema esté en oscuro) */
+:root[data-theme="light"] {
+  --color-primary: #1f4e79;
+  --color-primary-dark: #163a5c;
+  --color-secondary: #4f81bd;
+
+  --color-background: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-text: #1f2937;
+  --color-text-light: #4a5568;
+  --color-border: #dbe2ea;
+
+  --shadow-card: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+/* Transiciones suaves al cambiar de tema */
+body,
+.site-header,
+.main-nav,
+.project-card,
+.project-content,
+.project-category,
+.project-link,
+.site-footer,
+.theme-toggle {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Píldora de categoría en modo oscuro (automático) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .project-category {
+    background-color: #263f55;
+    color: #b9dcf7;
+  }
+}
+
+/* Píldora de categoría en modo oscuro (manual) */
+:root[data-theme="dark"] .project-category {
+  background-color: #263f55;
+  color: #b9dcf7;
+}
+
+/* Contraste de botones/enlaces en modo oscuro automático */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .main-nav a:hover,
+  :root:not([data-theme="light"]) .project-link {
+    background-color: var(--color-primary);
+    color: #121820;
+  }
+
+  :root:not([data-theme="light"]) .project-link:hover,
+  :root:not([data-theme="light"]) .main-nav a:hover {
+    background-color: var(--color-secondary);
+    color: #121820;
+  }
+}
+
+/* Contraste de botones/enlaces en modo oscuro manual */
+:root[data-theme="dark"] .main-nav a:hover,
+:root[data-theme="dark"] .project-link {
+  background-color: var(--color-primary);
+  color: #121820;
+}
+
+:root[data-theme="dark"] .project-link:hover,
+:root[data-theme="dark"] .main-nav a:hover {
+  background-color: var(--color-secondary);
+  color: #121820;
+}
 
 /* =====================================================
    20. ACCESIBILIDAD — ENFOQUE VISIBLE
    ===================================================== */
 
 :focus-visible {
-    outline: 0.2rem solid var(--color-secondary);
-    outline-offset: 0.2rem;
+  outline: 0.2rem solid var(--color-secondary);
+  outline-offset: 0.2rem;
 }
 
+/* =====================================================
+   21. BOTÓN DE TEMA
+   ===================================================== */
+
+.theme-toggle {
+  position: absolute;
+  inset-block-start: var(--space-md);
+  inset-inline-end: var(--space-md);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-sm);
+
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.theme-toggle:focus-visible {
+  outline: 0.2rem solid var(--color-secondary);
+  outline-offset: 0.2rem;
+}
+
+.theme-toggle-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* El header necesita position: relative para anclar el botón */
+.site-header {
+  position: relative;
+}
 
 /* =====================================================
-   21. REDUCCIÓN DE MOVIMIENTO
+   22. REDUCCIÓN DE MOVIMIENTO
    ===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-    }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
